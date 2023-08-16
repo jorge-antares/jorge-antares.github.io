@@ -11295,6 +11295,6 @@ textarea.form-control-lg {
 .bg-image-full2 {
   background-repeat: no-repeat;
   background-attachment: scroll;
-  background-position: center bottom;
-  background-size: cover;
+  background-position: center center;
+  background-size: contain;
 }
