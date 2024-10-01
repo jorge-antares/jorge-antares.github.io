@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <link rel="stylesheet" href="/css/names.css">
+    <title>
+        Most frequent baby names
+    </title>
+</head>
+
+<body>
+    <h1>Baby names in Ontario</h1>
+    <div class="search-input">
+        <label for="gendersel">Choose a gender: </label>
+        <select id="gendersel">
+            <option value="male">MALE</option>
+            <option value="female">FEMALE</option>
+        </select>
+        <a href="" target="_blank" hidden></a>
+        <input type="text" placeholder="Type name...">
+        <div class="autocom-box">
+            <!-- List inserted from javascript -->
+        </div>
+        <div class="icon">
+            <i class="fas fa-search"></i>
+        </div>
+    </div>
+    <canvas id="myChart"></canvas>
+</body>
+
+<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script type="text/javascript" src="js/names.js"></script>
+
+</html>
