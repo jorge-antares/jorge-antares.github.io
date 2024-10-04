@@ -13,8 +13,8 @@ async function main() {
     // 1. GET DATA
     maledata = await getData("data/male.json");
     femaledata = await getData("data/female.json");
-    maleunique = getUnique(maledata);
-    femaleunique = getUnique(femaledata);
+    maleunique = await getData("data/maleunique.json");
+    femaleunique = await getData("data/femaleunique.json");
     ismale = true;
     //const maledata = await getData("data/male.json");
     //const femaledata = await getData("data/female.json");
