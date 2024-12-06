@@ -83,23 +83,50 @@ async function getData(filepath) {
 
 
 function createPlot(name) {
+    var data;
+    var bordercolor;
+    var backcolor;
+
     // GET DATA
     if (ismale) {
-        var data = maledata.filter((elem) => (elem[2].trim() == name));
+        data = maledata.filter((elem) => (elem[2].trim() == name));
+        bordercolor = '#36A2EB';
+        backcolor = '#9BD0F5';
     } else {
-        var data = femaledata.filter((elem) => (elem[2].trim() == name));
+        data = femaledata.filter((elem) => (elem[2].trim() == name));
+        bordercolor = '#FF6384';
+        backcolor = '#FFB1C1';
     }
+
+    var minyear = parseInt(data[0][1]);
+    var maxyear = parseInt(data[data.length - 1][1]);
+    var namecounts = {};
+    for (let i = minyear; i <= maxyear; i++) {
+        namecounts[i] = '0';
+    }
+    for (let i = 0; i < data.length; i++) {
+        let domain = data[i][1];
+        let count = data[i][3];
+        namecounts[domain] = count;
+    }
+
+    console.log(minyear);
+    console.log(maxyear);
+    console.log(namecounts);
+
     // PLOT
     const ctx = document.getElementById('myChart');
     myChart = new Chart(ctx, {
         type: 'bar',
         data: {
-            labels: data.map((elem) => elem[1]),
+            labels: Object.keys(namecounts),//data.map((elem) => elem[1]),
             datasets: [{
                 label: '# Baby Names',
-                data: data.map((elem) => elem[3]),
-                borderWidth: 1
-            }]
+                data: Object.values(namecounts),//data.map((elem) => elem[3]),
+                borderWidth: 1,
+                borderColor: bordercolor,
+                backgroundColor: backcolor
+            }],
         },
         options: {
             scales: {
