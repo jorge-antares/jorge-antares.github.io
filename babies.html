@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <link rel="shortcut icon" href="#">
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/chart.js@4.4.7"></script>
+</head>
+
+<body>
+    <h1>
+        Babies height and weight by WHO
+    </h1>
+    Source https://www.who.int/tools/child-growth-standards/standards/length-height-for-age
+    <br><br>
+    <div class="user-input">
+        <label for="gendersel">Choose a gender: </label>
+        <select id="gendersel">
+            <option value="male">MALE</option>
+            <option value="female">FEMALE</option>
+        </select>
+        <br><br>
+        Months (decimals allowed)
+        <input id="months" type="text" placeholder="Type months..." value="12.22">
+        <br><br>
+        Height in cm (if available) <input id="height" type="text" placeholder="Type height..." value="70">
+        <br><br>
+        Weight in kg (if available) <input id="weight" type="text" placeholder="Type weight..." value="70">
+        <br><br>
+        <button type="button" onclick="makeCharts()">Update graphs!</button>
+    </div>
+    <div>
+        <canvas id="heightChart"></canvas>
+    </div>
+    <script charset="utf-8" src="js/babies.js"></script>
+</body>
+
+</html>
