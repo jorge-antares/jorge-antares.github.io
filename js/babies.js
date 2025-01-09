@@ -46,11 +46,16 @@ async function main() {
 }
 
 async function getData(attribute) {
+    let bias = 0;
     let heightfile = `data/${attribute}_girls.csv`;
     if (ismale) {
         heightfile = `data/${attribute}_boys.csv`;
     }
+    if (attribute == 'weight') {
+        bias = 1;
+    }
     const Month = [];
+    const P01 = [];
     const P1 = [];
     const P5 = [];
     const P10 = [];
@@ -62,6 +67,7 @@ async function getData(attribute) {
     const P90 = [];
     const P95 = [];
     const P99 = [];
+    const P999 = [];
     const response = await fetch(heightfile);
     const tableraw = (await response.text())
         .split('\n')
@@ -69,19 +75,21 @@ async function getData(attribute) {
         .forEach(row => {
             const column = row.split(',');
             Month.push(column[0]);
-            P1.push(column[6]);
-            P5.push(column[7]);
-            P10.push(column[8]);
-            P15.push(column[9]);
-            P25.push(column[10]);
-            P50.push(column[11]);
-            P75.push(column[12]);
-            P85.push(column[13]);
-            P90.push(column[14]);
-            P95.push(column[15]);
-            P99.push(column[16]);
+            P01.push(column[5 - bias]);
+            P1.push(column[6 - bias]);
+            P5.push(column[8 - bias]);
+            P10.push(column[9 - bias]);
+            P15.push(column[10 - bias]);
+            P25.push(column[11 - bias]);
+            P50.push(column[12 - bias]);
+            P75.push(column[13 - bias]);
+            P85.push(column[14 - bias]);
+            P90.push(column[15 - bias]);
+            P95.push(column[16 - bias]);
+            P99.push(column[18 - bias]);
+            P999.push(column[19 - bias]);
         });
-    return { Month, P1, P5, P10, P15, P25, P50, P75, P85, P90, P95, P99 };
+    return { Month, P01, P1, P5, P10, P15, P25, P50, P75, P85, P90, P95, P99, P999 };
 }
 
 async function makeCharts() {
@@ -91,17 +99,26 @@ async function makeCharts() {
     const months_min = Math.max(Math.round(months) - 3, 0);
     const months_max = Math.min(Math.round(months) + 3, 60);
     const h_percentiles = interpolateSeries(data_height, months);
+    const w_percentiles = interpolateSeries(data_weight, months);
 
     const ctx_height = document.getElementById('heightChart');
     const ctx_heightAcum = document.getElementById('heightAcum');
     const ctx_weight = document.getElementById('weightChart');
+    const ctx_weightAcum = document.getElementById('weightAcum');
 
     if (myHeightChart) {
         myHeightChart.destroy();
     };
     if (myHeightAcumChart) {
         myHeightAcumChart.destroy();
-    }
+    };
+    if (myWeightChart) {
+        myWeightChart.destroy();
+    };
+    if (myWeightAcumChart) {
+        myWeightAcumChart.destroy();
+    };
+
     if (height && months) {
         myHeightChart = new Chart(ctx_height, {
             data: {
@@ -117,6 +134,13 @@ async function makeCharts() {
                         backgroundColor: '#CCFF66',
                         pointBorderColor: 'rgb(0, 0, 0)',
                         xAxisID: 'x2'
+                    },
+                    {
+                        type: 'line',
+                        label: '0.1%',
+                        data: data_height.P01,
+                        borderWidth: 1,
+                        backgroundColor: '#e3f2fd',
                     },
                     {
                         type: 'line',
@@ -194,8 +218,14 @@ async function makeCharts() {
                         data: data_height.P99,
                         borderWidth: 1,
                         backgroundColor: '#e3f2fd'
+                    },
+                    {
+                        type: 'line',
+                        label: '99.9%',
+                        data: data_height.P999,
+                        borderWidth: 1,
+                        backgroundColor: '#e3f2fd',
                     }
-
                 ]
             },
             options: {
@@ -278,6 +308,195 @@ async function makeCharts() {
             }
         });
     }
+    if (weight && months) {
+        myWeightChart = new Chart(ctx_weight, {
+            data: {
+                labels: data_weight.Month,
+                datasets: [
+                    {
+                        type: 'scatter',
+                        label: 'Baby',
+                        data: [{ x: months, y: weight }],
+                        pointStyle: 'triangle',
+                        pointRadius: 7,
+                        borderWidth: 2,
+                        backgroundColor: '#CCFF66',
+                        pointBorderColor: 'rgb(0, 0, 0)',
+                        xAxisID: 'x2'
+                    },
+                    {
+                        type: 'line',
+                        label: '0.1%',
+                        data: data_weight.P01,
+                        borderWidth: 1,
+                        backgroundColor: '#ccfff2',
+                    },
+                    {
+                        type: 'line',
+                        label: '1%',
+                        data: data_weight.P1,
+                        borderWidth: 1,
+                        backgroundColor: '#ccfff2',
+                    },
+                    {
+                        type: 'line',
+                        label: '5%',
+                        data: data_weight.P5,
+                        borderWidth: 1,
+                        backgroundColor: '#99ffe6'
+                    },
+                    {
+                        type: 'line',
+                        label: '10%',
+                        data: data_weight.P10,
+                        borderWidth: 1,
+                        backgroundColor: '#66ffd9'
+                    },
+                    {
+                        type: 'line',
+                        label: '15%',
+                        data: data_weight.P15,
+                        borderWidth: 1,
+                        backgroundColor: '#1affc6'
+                    },
+                    {
+                        type: 'line',
+                        label: '25%',
+                        data: data_weight.P25,
+                        borderWidth: 1,
+                        backgroundColor: '#00cc99'
+                    },
+                    {
+                        type: 'line',
+                        label: '50%',
+                        data: data_weight.P50,
+                        borderWidth: 1,
+                        backgroundColor: '#e91e63'
+                    },
+                    {
+                        type: 'line',
+                        label: '75%',
+                        data: data_weight.P75,
+                        borderWidth: 1,
+                        backgroundColor: '#00cc99'
+                    },
+                    {
+                        type: 'line',
+                        label: '85%',
+                        data: data_weight.P85,
+                        borderWidth: 1,
+                        backgroundColor: '#1affc6'
+                    },
+                    {
+                        type: 'line',
+                        label: '90%',
+                        data: data_weight.P90,
+                        borderWidth: 1,
+                        backgroundColor: '#66ffd9'
+                    },
+                    {
+                        type: 'line',
+                        label: '95%',
+                        data: data_weight.P95,
+                        borderWidth: 1,
+                        backgroundColor: '#99ffe6'
+                    },
+                    {
+                        type: 'line',
+                        label: '99%',
+                        data: data_weight.P99,
+                        borderWidth: 1,
+                        backgroundColor: '#ccfff2'
+                    },
+                    {
+                        type: 'line',
+                        label: '99.9%',
+                        data: data_weight.P999,
+                        borderWidth: 1,
+                        backgroundColor: '#ccfff2',
+                    }
+                ]
+            },
+            options: {
+                scales: {
+                    y: {
+                        beginAtZero: false
+                    },
+                    x: {
+                        min: months_min,
+                        max: months_max
+                    },
+                    x2: {
+                        min: months_min,
+                        max: months_max,
+                        ticks: {
+                            display: false
+                        },
+                        grid: {
+                            display: false
+                        }
+                    }
+                },
+                plugins: {
+                    title: {
+                        display: true,
+                        text: 'Weight [kg]',
+                        font: { size: 15 }
+                    }
+                },
+                maintainAspectRatio: false
+            }
+        });
+    }
+    if (weight && months) {
+        myWeightAcumChart = new Chart(ctx_weightAcum, {
+            data: {
+                labels: w_percentiles.X,
+                datasets: [{
+                    type: 'line',
+                    label: `Weight percentiles for month ${months}`,
+                    data: w_percentiles.P,
+                    borderWidth: 1,
+                    borderColor: 'rgb(60, 179, 113)',
+                    backgroundColor: 'rgb(60, 179, 113)',
+                    tension: 0.
+                },
+                {
+                    type: 'scatter',
+                    label: 'Baby',
+                    data: [{ x: weight, y: getPercentile(w_percentiles, weight) }],
+                    pointStyle: 'triangle',
+                    pointRadius: 7,
+                    borderWidth: 2,
+                    backgroundColor: '#CCFF66',
+                    pointBorderColor: 'rgb(0, 0, 0)',
+                    xAxisID: 'x2'
+                }]
+            },
+            options: {
+                scales: {
+                    x: {
+                        type: 'linear',
+                        min: Math.min(Math.floor(w_percentiles.X[0]), weight),
+                        max: Math.max(Math.ceil(w_percentiles.X[w_percentiles.X.length - 1], weight)),
+                    },
+                    x2: {
+                        type: 'linear',
+                        min: Math.min(Math.floor(w_percentiles.X[0]), weight),
+                        max: Math.max(Math.ceil(w_percentiles.X[w_percentiles.X.length - 1], weight)),
+                        ticks: {
+                            display: false
+                        },
+                        grid: {
+                            display: false
+                        }
+                    },
+                    y: { beginAtZero: true }
+                },
+                maintainAspectRatio: false
+            }
+        });
+    }
 }
 
 function interpolateSeries(input_data, m) {
@@ -285,8 +504,9 @@ function interpolateSeries(input_data, m) {
     const m1 = m0 + 1;
     const alpha = m - m0;
     return {
-        P: [1, 5, 10, 15, 25, 50, 75, 85, 90, 95, 99],
+        P: [0.1, 1, 5, 10, 15, 25, 50, 75, 85, 90, 95, 99, 99.9],
         X: [
+            input_data.P01[m0] * (1 - alpha) + input_data.P01[m1] * alpha,
             input_data.P1[m0] * (1 - alpha) + input_data.P1[m1] * alpha,
             input_data.P5[m0] * (1 - alpha) + input_data.P5[m1] * alpha,
             input_data.P10[m0] * (1 - alpha) + input_data.P10[m1] * alpha,
@@ -297,7 +517,8 @@ function interpolateSeries(input_data, m) {
             input_data.P85[m0] * (1 - alpha) + input_data.P85[m1] * alpha,
             input_data.P90[m0] * (1 - alpha) + input_data.P90[m1] * alpha,
             input_data.P95[m0] * (1 - alpha) + input_data.P95[m1] * alpha,
-            input_data.P99[m0] * (1 - alpha) + input_data.P99[m1] * alpha
+            input_data.P99[m0] * (1 - alpha) + input_data.P99[m1] * alpha,
+            input_data.P999[m0] * (1 - alpha) + input_data.P999[m1] * alpha
         ]
     }
 }
