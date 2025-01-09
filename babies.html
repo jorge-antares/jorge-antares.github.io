@@ -4,11 +4,17 @@
 <head>
     <link rel="shortcut icon" href="#">
     <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/chart.js@4.4.7"></script>
+    <style>
+        .charts-container {
+            width: 50%;
+            display: flex;
+        }
+    </style>
 </head>
 
 <body>
     <h1>
-        Babies height and weight by WHO
+        Baby height and weight by WHO
     </h1>
     Source https://www.who.int/tools/child-growth-standards/standards/length-height-for-age
     <br><br>
@@ -20,16 +26,21 @@
         </select>
         <br><br>
         Months (decimals allowed)
-        <input id="months" type="text" placeholder="Type months..." value="12.22">
+        <input id="months" type="text" placeholder="Type months..." value="18.5">
         <br><br>
-        Height in cm (if available) <input id="height" type="text" placeholder="Type height..." value="70">
+        Height in cm (if available) <input id="height" type="text" placeholder="Type height..." value="81.5">
         <br><br>
-        Weight in kg (if available) <input id="weight" type="text" placeholder="Type weight..." value="70">
+        Weight in kg (if available) <input id="weight" type="text" placeholder="Type weight..." value="11.3">
         <br><br>
-        <button type="button" onclick="makeCharts()">Update graphs!</button>
+        <button type="button" onclick="makeCharts()">Show graphs!</button>
     </div>
-    <div>
-        <canvas id="heightChart"></canvas>
+    <div class="charts-container">
+        <canvas id="heightChart" height="400px"></canvas>
+        <canvas id="heightAcum" height="400px"></canvas>
+    </div>
+    <div class="charts-container">
+        <canvas id="weightChart" height="400px"></canvas>
+        <canvas id="weightAcum" height="400px"></canvas>
     </div>
     <script charset="utf-8" src="js/babies.js"></script>
 </body>
