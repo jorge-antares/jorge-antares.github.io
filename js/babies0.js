@@ -1,5 +1,4 @@
 // JAN, 2024    Jorge A. Garcia
-let isDarkMode = false;
 
 // USER INPUT DIV
 const searchWrapper = document.querySelector(".user-input");
@@ -536,39 +535,4 @@ function getPercentile(percentiles, m) {
         }
     }
     return 0;
-}
-
-function toggleTheme() {
-    isDarkMode = !isDarkMode;
-    document.documentElement.setAttribute('data-theme', isDarkMode ? 'dark' : 'light');
-    if (myHeightChart) makeCharts();
-}
-function getChartOptions(isDark) {
-    return {
-        plugins: {
-            legend: {
-                labels: {
-                    color: isDark ? '#ffffff' : '#333333'
-                }
-            }
-        },
-        scales: {
-            x: {
-                grid: {
-                    color: isDark ? '#404040' : '#ddd'
-                },
-                ticks: {
-                    color: isDark ? '#ffffff' : '#333333'
-                }
-            },
-            y: {
-                grid: {
-                    color: isDark ? '#404040' : '#ddd'
-                },
-                ticks: {
-                    color: isDark ? '#ffffff' : '#333333'
-                }
-            }
-        }
-    };
 }
