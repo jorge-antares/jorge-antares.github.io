@@ -97,8 +97,8 @@ async function makeCharts() {
     data_height = await getData('height');
     data_weight = await getData('weight');
 
-    const months_min = Math.max(Math.round(months) - 3, 0);
-    const months_max = Math.min(Math.round(months) + 3, 60);
+    const months_min = 0//Math.max(Math.round(months) - 30, 0);
+    const months_max = 60//Math.min(Math.round(months) + 30, 60);
     const h_percentiles = interpolateSeries(data_height, months);
     const w_percentiles = interpolateSeries(data_weight, months);
 
