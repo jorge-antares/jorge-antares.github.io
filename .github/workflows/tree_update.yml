@@ -9,8 +9,8 @@ jobs:
       uses: actions/checkout@v4
     - name: Update tree
       run: |
-        echo "Tree of files last updated on" > ./README.md
-        tree >> ./README.md
+        echo "Tree of files last updated on" > README.md
+        tree >> README.md
     - name: git commands
       run: |
         git add *
