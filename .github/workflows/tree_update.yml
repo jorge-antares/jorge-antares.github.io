@@ -13,6 +13,8 @@ jobs:
         tree >> README.md
     - name: git commands
       run: |
+        git config --global user.email "antares.minos@gmail.com"
+        git config --global user.name "jorge-antares"
         git add *
         git commit -m "Updated using workflow treeupdate.yml"
     - name: Push changes
