@@ -7,13 +7,14 @@
     font-family: 'Poppins', sans-serif;
 }
 
-/*body {
-  background: url('../img/snow.jpg');
-  background-size: cover;
-  background-attachment: fixed;
-  background-repeat: no-repeat;
+/*
+body {
+    background: url('../img/snow.jpg');
+    background-size: cover;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
 }
-  */
+*/
 
 ::selection {
     color: #ffffff;
@@ -23,12 +24,11 @@
 .wrapper {
     max-width: 450px;
     margin: 150px auto;
-    /* margin: 150px auto */
 }
 
 .wrapper .search-input {
     background: #fff;
-    width: 100%;
+    width: 50%;
     border-radius: 5px;
     position: relative;
     box-shadow: 0px 1px 5px 3px rgba(0, 0, 0, 0.12);
@@ -36,13 +36,13 @@
 
 .search-input input {
     height: 55px;
-    width: 100%;
+    width: 50%;
     outline: none;
     border: none;
     border-radius: 5px;
     padding: 0 60px 0 20px;
     font-size: 18px;
-    box-shadow: 0px 1px 5px rgba(0, 0, 0, 0.1);
+    box-shadow: 0px 1px 5px rgba(0, 0, 0, 0.2);
 }
 
 .search-input.active input {
@@ -67,7 +67,7 @@
     list-style: none;
     padding: 8px 12px;
     display: none;
-    width: 100%;
+    width: 50%;
     cursor: default;
     border-radius: 3px;
 }
@@ -91,4 +91,10 @@
     font-size: 20px;
     color: #644bff;
     cursor: pointer;
+}
+
+.chart-container {
+    position: relative;
+    height: 80%;
+    width: 80%;
 }

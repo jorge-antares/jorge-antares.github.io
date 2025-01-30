@@ -9,9 +9,11 @@ jobs:
       uses: actions/checkout@v4
     - name: Update tree
       run: |
-        echo "Tree of files last updated on" > README.txt
-        date >> README.txt
+        echo "Tree of files last updated on" > README.md
+        date >> README.md
+        echo "'''" >> README.md
         tree >> README.txt
+        echo "'''" >> README.md
     - name: git commands
       run: |
         git config --global user.email "antares.minos@gmail.com"
