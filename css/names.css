@@ -94,7 +94,7 @@ body {
 }
 
 .chart-container {
-    position: relative;
-    height: 80%;
-    width: 80%;
+    position: static;
+    height: 90%;
+    width: 90%;
 }
