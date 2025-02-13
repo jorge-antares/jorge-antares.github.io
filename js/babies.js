@@ -232,11 +232,13 @@ async function makeCharts() {
             options: {
                 scales: {
                     y: {
-                        beginAtZero: false
+                        beginAtZero: false,
+                        title: { display: true, text: "cm" }
                     },
                     x: {
                         min: months_min,
-                        max: months_max
+                        max: months_max,
+                        title: { display: true, text: "Week" }
                     },
                     x2: {
                         min: months_min,
@@ -252,7 +254,7 @@ async function makeCharts() {
                 plugins: {
                     title: {
                         display: true,
-                        text: 'Height [cm]',
+                        text: 'Height in cm',
                         font: { size: 15 }
                     }
                 },
@@ -291,6 +293,7 @@ async function makeCharts() {
                         type: 'linear',
                         min: Math.min(Math.floor(h_percentiles.X[0]), height),
                         max: Math.max(Math.ceil(h_percentiles.X[h_percentiles.X.length - 1], height)),
+                        title: { display: true, text: "cm" }
                     },
                     x2: {
                         type: 'linear',
@@ -303,7 +306,9 @@ async function makeCharts() {
                             display: false
                         }
                     },
-                    y: { beginAtZero: true }
+                    y: {
+                        beginAtZero: true
+                    }
                 },
                 maintainAspectRatio: false
             }
@@ -421,11 +426,13 @@ async function makeCharts() {
             options: {
                 scales: {
                     y: {
-                        beginAtZero: false
+                        beginAtZero: false,
+                        title: { display: true, text: "kg" }
                     },
                     x: {
                         min: months_min,
-                        max: months_max
+                        max: months_max,
+                        title: { display: true, text: "Week" }
                     },
                     x2: {
                         min: months_min,
@@ -441,7 +448,7 @@ async function makeCharts() {
                 plugins: {
                     title: {
                         display: true,
-                        text: 'Weight [kg]',
+                        text: 'Weight in kg',
                         font: { size: 15 }
                     }
                 },
@@ -480,6 +487,7 @@ async function makeCharts() {
                         type: 'linear',
                         min: Math.min(Math.floor(w_percentiles.X[0]), weight),
                         max: Math.max(Math.ceil(w_percentiles.X[w_percentiles.X.length - 1], weight)),
+                        title: { display: true, text: "kg" }
                     },
                     x2: {
                         type: 'linear',
