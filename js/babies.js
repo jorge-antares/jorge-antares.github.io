@@ -238,7 +238,7 @@ async function makeCharts() {
                     x: {
                         min: months_min,
                         max: months_max,
-                        title: { display: true, text: "Week" }
+                        title: { display: true, text: "Month" }
                     },
                     x2: {
                         min: months_min,
@@ -432,7 +432,7 @@ async function makeCharts() {
                     x: {
                         min: months_min,
                         max: months_max,
-                        title: { display: true, text: "Week" }
+                        title: { display: true, text: "Month" }
                     },
                     x2: {
                         min: months_min,
