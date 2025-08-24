@@ -2,29 +2,38 @@
 <html lang="en">
 
 <head>
+    
     <link rel="stylesheet" href="css/names.css">
+
     <title>
         Most frequent baby names
     </title>
 </head>
 
 <body>
-    <h1>Baby names in Ontario</h1>
+    
+
+    <h2>Baby Names in Ontario</h2>
     <br>
-    <div class="search-input">
-        <label for="gendersel">Choose a gender: </label>
-        <select id="gendersel">
-            <option value="male">MALE</option>
-            <option value="female">FEMALE</option>
-        </select>
-        <a href="" target="_blank" hidden></a>
-        <br>
-        <input type="text" placeholder="Type name...">
-        <div class="autocom-box">
-            <!-- List inserted from javascript -->
-        </div>
-        <div class="icon">
-            <i class="fas fa-search"></i>
+    <div class="container mb-4">
+        <div class="search-input">
+            <form class="row g-2 align-items-center">
+                <div class="col-auto">
+                    <label for="gendersel" class="col-form-label">Choose a gender:</label>
+                </div>
+                <div class="col-auto">
+                    <select id="gendersel" class="form-select">
+                        <option value="male">MALE</option>
+                        <option value="female">FEMALE</option>
+                    </select>
+                </div>
+                <div class="col-auto flex-grow-1">
+                    <input type="text" class="form-control" id="nameInput" placeholder="Type name...">
+                </div>
+            </form>
+            <div class="autocom-box mt-2">
+                <!-- List inserted from javascript -->
+            </div>
         </div>
     </div>
     <div class="chart-container">

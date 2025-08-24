@@ -15,9 +15,9 @@
         </script>
     <!--------->
 
-    <title>Jorge Andres</title>
+    <title>JAG</title>
     <!-- Favicon-->
-    <link rel="icon" type="image/x-icon" href="img/profile2.png" />
+    <link rel="icon" type="image/x-icon" href="img/sum.svg" />
     <!-- Core theme CSS (includes Bootstrap)-->
     <link href="css/styles.css" rel="stylesheet" />
     <style>
@@ -30,245 +30,401 @@
 
 <body>
     <!-- Responsive navbar-->
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
         <div class="container">
-            <!-- <a class="navbar-brand" href="#!">Start Bootstrap</a> -->
+            <a class="navbar-brand" href="index.html">JORGE AG</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
                 data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
                 aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
-                    <li class="nav-item"><a class="nav-link" href="#ABOUT">ABOUT</a></li>
-                    <li class="nav-item"><a class="nav-link" href="https://github.com/jorge-antares">GitHub</a></li>
-                    <li class="nav-item"><a class="nav-link" href="files/academic_cv.pdf">ACADEMIC CV</a></li>
-                    <li class="nav-item"><a class="nav-link" href="names.html">BABY-NAMES</a></li>
-                    <li class="nav-item"><a class="nav-link" href="babies.html">BABY-MEASURES</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#CONTACT">CONTACT</a></li>
+                    <li class="nav-item"><a class="nav-link text-white" href="index.html">ABOUT</a></li>
+                    <li class="nav-item"><a class="nav-link text-white" href="https://github.com/jorge-antares">GITHUB</a>
+                    </li>
+                    <li class="nav-item"><a class="nav-link text-white" href="names.html">BABY-NAMES</a></li>
+                    <li class="nav-item"><a class="nav-link text-white" href="babies.html">BABY-MEASURES</a></li>
+                    <li class="nav-item"><a class="nav-link text-white" href="#CONTACT">CONTACT</a></li>
                 </ul>
             </div>
         </div>
     </nav>
-    <!-- Header - set the background image for the header in the line below Old photo:
-        style="background-image: url('https://source.unsplash.com/hRemch0ZDwI/1600x900')" -->
+    <div style="height: 70px;"></div>
 
-    <header class="py-5 bg-image-full" style="background-image: url('img/river.jpg')">
-        <div class="text-center my-5" style="height: 5rem">
-            <img class="img-fluid rounded-circle mb-4" src="img/Jorge_Photo.jpeg" alt="..." width="300" height="300" />
-            <h1 class="text-black fs-3 fw-bolder">Jorge A García</h1>
-            <p class="text-black mb-0">OPTIMIZATION - ECONOMIC MODELING - DATA SCIENTIST</p>
-        </div>
-    </header>
-    <div style="height:150px"></div>
+    
     <!-- Content section-->
     <section class="py-5">
         <div class="container my-5" id="ABOUT">
+            <div class="row justify-content-center align-items-center">
+                <div class="col-lg-8">
+                    <div class="row align-items-center">
+                        <div class="col-md-8" style="text-align:justify">
+                            <h2>ABOUT ME</h2>
+                            <p>I am a data scientist and optimization specialist with a strong background in mathematical modeling, simulation, and algorithm development. My expertise spans optimization techniques, economic and systems modeling, and the application of machine learning to real-world problems. I am proficient with Python and other scientific programming languages, and have extensive experience building, analyzing, and deploying data-driven models for decision support and research.</p>
+                            <p>My interdisciplinary background includes a <strong>PhD in Systems Design Engineering</strong>, a <b>MSc. in Operations Research</b> and a <b>BSc. in Industrial Management</b>.</p>
+                        </div>
+                        <div class="col-md-4 d-flex flex-column align-items-center">
+                            <figure class="text-center">
+                                <img src="img/Jorge_Photo.jpeg" alt="Jorge A García" class="img-fluid rounded-circle mb-2"
+                                    style="max-width: 220px;">
+                                <!--<figcaption class="figure-caption text-dark fw-bold">Jorge</figcaption>-->
+                            </figure>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="py-5">
+        <div class="container my-5" id="EXPERIENCE">
             <div class="row justify-content-center">
-                <div class="col-lg-8" style="text-align:justify">
-                    <h2>ABOUT ME</h2>
+                <div class="col-lg-8">
+                    <h2>EXPERIENCE</h2>
+                    <div class="accordion accordion-flush" id="accordionFlushExample">
+                        <!-- Accordion Item 1 -->
+                        <div class="accordion-item">
+                            <h2 class="accordion-header" id="flush-headingOne">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                    data-bs-target="#flush-collapseOne" aria-expanded="false" aria-controls="flush-collapseOne">
+                                    Optimization models and algorithms
+                                </button>
+                            </h2>
+                            <div id="flush-collapseOne" class="accordion-collapse collapse" aria-labelledby="flush-headingOne"
+                                data-bs-parent="#accordionFlushExample">
+                                <div class="accordion-body">
+                                    <div class="accordion" id="subAccordionOne">
+                                        <div class="accordion-item">
+                                            <h2 class="accordion-header" id="subOne-heading1">
+                                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                                    data-bs-target="#subOne-collapse1" aria-expanded="false" aria-controls="subOne-collapse1">
+                                                    Spatial Mixed-Integer Linear Program for Nutrient Measure Selection
+                                                </button>
+                                            </h2>
+                                            <div id="subOne-collapse1" class="accordion-collapse collapse" aria-labelledby="subOne-heading1"
+                                                data-bs-parent="#subAccordionOne">
+                                                <div class="accordion-body">
+                                                    Formulated and implemented a mixed-integer linear program that determines the least-cost way
+                                                    to achieve an environmental nutrient target by selecting optimal abatement measures for
+                                                    different sub-watersheds. The paper is <a href="https://doi.org/10.1111/cjag.12342"
+                                                        target="_blank"><b>here</b></a>.
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="accordion-item">
+                                            <h2 class="accordion-header" id="subOne-heading2">
+                                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                                    data-bs-target="#subOne-collapse2" aria-expanded="false" aria-controls="subOne-collapse2">
+                                                    Multi-Objective Optimization for Water Resources Management
+                                                </button>
+                                            </h2>
+                                            <div id="subOne-collapse2" class="accordion-collapse collapse" aria-labelledby="subOne-heading2"
+                                                data-bs-parent="#subAccordionOne">
+                                                <div class="accordion-body">
+                                                    Formulated and implemented a goal programming model that allocates water volumes from
+                                                    various water supply sources (groundwater, surface water, desalinated water, treated
+                                                    wastewater) to different water uses (domestic, agricultural, industrial), taking into
+                                                    account stakeholders' prioritization. The publication is found <a
+                                                        href="https://doi.org/10.3390/ECWS-7-14227" target="_blank"><b>here</b></a> and the
+                                                    model <a href="https://github.com/jorge-antares/water_allocation_model"
+                                                        target="_blank"><b>here</b></a>.
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="accordion-item">
+                                            <h2 class="accordion-header" id="subOne-heading3">
+                                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                                    data-bs-target="#subOne-collapse3" aria-expanded="false" aria-controls="subOne-collapse3">
+                                                    Quadratic Programming for Optimal Investment in Abatement
+                                                </button>
+                                            </h2>
+                                            <div id="subOne-collapse3" class="accordion-collapse collapse" aria-labelledby="subOne-heading3"
+                                                data-bs-parent="#subAccordionOne">
+                                                <div class="accordion-body">
+                                                    Formulated a quadratic program that builds up from a hydrological steady-state model of the
+                                                    Lake Erie watershed and determines the level of investment in wastewater treatment plants
+                                                    or agricultural areas such that a target phosphorus reduction is achieved. Preprint found <a
+                                                        href="files/cea2024.pdf"><b>here</b></a>.
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="accordion-item">
+                                            <h2 class="accordion-header" id="subOne-heading4">
+                                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                                    data-bs-target="#subOne-collapse4" aria-expanded="false" aria-controls="subOne-collapse4">
+                                                    Integer Programming for Production Planning
+                                                </button>
+                                            </h2>
+                                            <div id="subOne-collapse4" class="accordion-collapse collapse" aria-labelledby="subOne-heading4"
+                                                data-bs-parent="#subAccordionOne">
+                                                <div class="accordion-body">
+                                                    Formulated and implemented an integer program for production planning on a
+                                                    manufacturing company. This model was developed as part of my MSc. thesis and can be
+                                                    found <a href="http://132.248.9.195/ptd2013/febrero/0689556/Index.html"><b>here</b></a>.
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
 
-                    I'm an optimization modeler and data scientist with more than 10 years of experience developing
-                    modeling solutions and obtaining insights from large datasets (> 10 GB). My intersdiciplinary
-                    background includes a <strong>PhD in Systems Design Engineering</strong>, a <b>MSc. in Operations
-                        Research</b>
-                    and a <b>BSc. in Industrial Management</b>.
+                        <!-- Accordion Item 2 -->
+                        <div class="accordion-item">
+                            <h2 class="accordion-header" id="flush-headingTwo">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                    data-bs-target="#flush-collapseTwo" aria-expanded="false" aria-controls="flush-collapseTwo">
+                                    Machine learning and data science
+                                </button>
+                            </h2>
+                            <div id="flush-collapseTwo" class="accordion-collapse collapse" aria-labelledby="flush-headingTwo"
+                                data-bs-parent="#accordionFlushExample">
+                                <div class="accordion-body">
+                                    <div class="accordion" id="subAccordionTwo">
+                                        <div class="accordion-item">
+                                            <h2 class="accordion-header" id="subTwo-heading1">
+                                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                                    data-bs-target="#subTwo-collapse1" aria-expanded="false" aria-controls="subTwo-collapse1">
+                                                    Machine Learning Applied to Discrete Choice Surveys
+                                                </button>
+                                            </h2>
+                                            <div id="subTwo-collapse1" class="accordion-collapse collapse" aria-labelledby="subTwo-heading1"
+                                                data-bs-parent="#subAccordionTwo">
+                                                <div class="accordion-body">
+                                                    Applied machine learning to predict the willingness-to-pay of respondents about beach
+                                                    clean-up measures from a survey applied to several European countries. Results are
+                                                    comparable to those from traditional discrete choice models.
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="accordion-item">
+                                            <h2 class="accordion-header" id="subTwo-heading2">
+                                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                                    data-bs-target="#subTwo-collapse2" aria-expanded="false" aria-controls="subTwo-collapse2">
+                                                    Land Use Clustering
+                                                </button>
+                                            </h2>
+                                            <div id="subTwo-collapse2" class="accordion-collapse collapse" aria-labelledby="subTwo-heading2"
+                                                data-bs-parent="#subAccordionTwo">
+                                                <div class="accordion-body">
+                                                    Grouped census sub-divisions in Ontario based on their land use shares and socio-economic
+                                                    variables using K-means clustering. This grouping will be used in a model to predict future
+                                                    land use changes.
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="accordion-item">
+                                            <h2 class="accordion-header" id="subTwo-heading3">
+                                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                                    data-bs-target="#subTwo-collapse3" aria-expanded="false" aria-controls="subTwo-collapse3">
+                                                    Integrated Choice and Latent Variable
+                                                </button>
+                                            </h2>
+                                            <div id="subTwo-collapse3" class="accordion-collapse collapse" aria-labelledby="subTwo-heading3"
+                                                data-bs-parent="#subAccordionTwo">
+                                                <div class="accordion-body">
+                                                    Specified and solved an integrated choice and latent variable model about
+                                                    attribute-non-attendance on responders of a survey. The novelty of this approach is that I
+                                                    used PCA and ICA to select the socio-econ variables from which latent variables are created.
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="accordion-item">
+                                            <h2 class="accordion-header" id="subTwo-heading4">
+                                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                                    data-bs-target="#subTwo-collapse4" aria-expanded="false" aria-controls="subTwo-collapse4">
+                                                    Canadian Census Data Processing
+                                                </button>
+                                            </h2>
+                                            <div id="subTwo-collapse4" class="accordion-collapse collapse" aria-labelledby="subTwo-heading4"
+                                                data-bs-parent="#subAccordionTwo">
+                                                <div class="accordion-body">
+                                                    Developed a procedure to extract census data for multiple years and load them into SQLite
+                                                    databases for posterior use in modeling and analyses. Code will be soon made available on
+                                                    GitHub.
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
 
-                    <br><br>
-                    I have extensive hands-on experience developing a wide range of decision models and tools. Examples
-                    of these are the following:
-                    <br><br>
-                    <ul>
-                        <li><a href="#OPT">Optimization models and algorithms</a>.</li>
-                        <li><a href="#ML">Machine learning and data science</a>.</li>
-                        <li><a href="#ECON">Macroeconomic modeling</a>.</li>
-                        <li><a href="#SIM">Systems engineering</a>.</li>
-                    </ul>
-                    <br><br>
+                        <!-- Accordion Item 3 -->
+                        <div class="accordion-item">
+                            <h2 class="accordion-header" id="flush-headingThree">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                    data-bs-target="#flush-collapseThree" aria-expanded="false" aria-controls="flush-collapseThree">
+                                    Macroeconomic modeling
+                                </button>
+                            </h2>
+                            <div id="flush-collapseThree" class="accordion-collapse collapse" aria-labelledby="flush-headingThree"
+                                data-bs-parent="#accordionFlushExample">
+                                <div class="accordion-body">
+                                    <div class="accordion" id="subAccordionThree">
+                                        <div class="accordion-item">
+                                            <h2 class="accordion-header" id="subThree-heading1">
+                                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                                    data-bs-target="#subThree-collapse1" aria-expanded="false" aria-controls="subThree-collapse1">
+                                                    Computable General Equilibrium
+                                                </button>
+                                            </h2>
+                                            <div id="subThree-collapse1" class="accordion-collapse collapse" aria-labelledby="subThree-heading1"
+                                                data-bs-parent="#subAccordionThree">
+                                                <div class="accordion-body">
+                                                    Developed a CGE model for the Canadian economy to evaluate the impact of future
+                                                    climate-induced water shocks. The model has 49 industries, 64 commodities, and 4 economic
+                                                    agents. It was constructed in Python but the core solver is from GAMS. The preprint is
+                                                    <a href="https://arxiv.org/abs/2309.16678" target="_blank"><b>here</b></a> and the model
+                                                    details <a href="files/cge_w.pdf" target="_blank"><b>here</b></a>.
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="accordion-item">
+                                            <h2 class="accordion-header" id="subThree-heading2">
+                                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                                    data-bs-target="#subThree-collapse2" aria-expanded="false" aria-controls="subThree-collapse2">
+                                                    Canadian Social Accounting Matrix
+                                                </button>
+                                            </h2>
+                                            <div id="subThree-collapse2" class="accordion-collapse collapse" aria-labelledby="subThree-heading2"
+                                                data-bs-parent="#subAccordionThree">
+                                                <div class="accordion-body">
+                                                    Developed a procedure to automatize the creation of Social Accounting Matrices for the
+                                                    Canadian economy using tables from Statistics Canada. Tables are found <a
+                                                        href="https://github.com/jorge-antares/SAMCanada.git" target="_blank"><b>here</b></a>.
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="accordion-item">
+                                            <h2 class="accordion-header" id="subThree-heading3">
+                                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                                    data-bs-target="#subThree-collapse3" aria-expanded="false" aria-controls="subThree-collapse3">
+                                                    Multi-Regional Input Output models
+                                                </button>
+                                            </h2>
+                                            <div id="subThree-collapse3" class="accordion-collapse collapse" aria-labelledby="subThree-heading3"
+                                                data-bs-parent="#subAccordionThree">
+                                                <div class="accordion-body">
+                                                    Developed a hydro-economic model combining the Input Output theory and linear programming.
+                                                    This model was used to evaluate the cost of water disruptions or emission constraints into
+                                                    the Great Lakes economy. Publications are here: <a
+                                                        href="https://doi.org/10.1029/2021WR030772" target="_blank"><b>WRR</b></a> and <a
+                                                        href="https://doi.org/10.1080/09535314.2020.1805414" target="_blank"><b>ESR</b></a>.
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="accordion-item">
+                                            <h2 class="accordion-header" id="subThree-heading4">
+                                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                                    data-bs-target="#subThree-collapse4" aria-expanded="false" aria-controls="subThree-collapse4">
+                                                    Discrete Choice Models
+                                                </button>
+                                            </h2>
+                                            <div id="subThree-collapse4" class="accordion-collapse collapse" aria-labelledby="subThree-heading4"
+                                                data-bs-parent="#subAccordionThree">
+                                                <div class="accordion-body">
+                                                    Formulated and estimated discrete choice models related to environmental or water quality
+                                                    surveys. For example, I participated in the specification of a model to describe
+                                                    respondents' preferences and willingness-to-pay about beach litter cleaning measures.
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
 
+                        <!-- Accordion Item 4 -->
+                        <div class="accordion-item">
+                            <h2 class="accordion-header" id="flush-headingFour">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                    data-bs-target="#flush-collapseFour" aria-expanded="false" aria-controls="flush-collapseFour">
+                                    Systems engineering
+                                </button>
+                            </h2>
+                            <div id="flush-collapseFour" class="accordion-collapse collapse" aria-labelledby="flush-headingFour"
+                                data-bs-parent="#accordionFlushExample">
+                                <div class="accordion-body">
+                                    <div class="accordion" id="subAccordionFour">
+                                        <div class="accordion-item">
+                                            <h2 class="accordion-header" id="subFour-heading1">
+                                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                                    data-bs-target="#subFour-collapse1" aria-expanded="false" aria-controls="subFour-collapse1">
+                                                    Reaction-Diffusion Equation for Containers' Lifetime Calculation
+                                                </button>
+                                            </h2>
+                                            <div id="subFour-collapse1" class="accordion-collapse collapse" aria-labelledby="subFour-heading1"
+                                                data-bs-parent="#subAccordionFour">
+                                                <div class="accordion-body">
+                                                    Numerically solved a reaction-diffusion system to approximate the reduction of sulphate to
+                                                    sulphide caused by sulphate-reducing bacteria under the conditions of a deep geological
+                                                    repository in order to calculate the corrosion rate and therefore the expected lifetime of
+                                                    used nuclear fuel containers. The publication is found
+                                                    <a href="https://doi.org/10.3390/app11177806" target="_blank"><b>here</b></a>.
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="accordion-item">
+                                            <h2 class="accordion-header" id="subFour-heading2">
+                                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                                    data-bs-target="#subFour-collapse2" aria-expanded="false" aria-controls="subFour-collapse2">
+                                                    Agent-Based Model of Drivers in a Road Network
+                                                </button>
+                                            </h2>
+                                            <div id="subFour-collapse2" class="accordion-collapse collapse" aria-labelledby="subFour-heading2"
+                                                data-bs-parent="#subAccordionFour">
+                                                <div class="accordion-body">
+                                                    Formulated an agent-based model to describe the effect on road networks of drivers using
+                                                    real-time information about current travelling times to choose their destination route.
+                                                    The model is presented
+                                                    <a href="http://hdl.handle.net/10012/13325" target="_blank"><b>here</b></a>.
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="accordion-item">
+                                            <h2 class="accordion-header" id="subFour-heading3">
+                                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                                    data-bs-target="#subFour-collapse3" aria-expanded="false" aria-controls="subFour-collapse3">
+                                                    Bayesian Belief Updating Procedure
+                                                </button>
+                                            </h2>
+                                            <div id="subFour-collapse3" class="accordion-collapse collapse" aria-labelledby="subFour-heading3"
+                                                data-bs-parent="#subAccordionFour">
+                                                <div class="accordion-body">
+                                                    Developed a procedure to assimilate new information and update current beliefs about the
+                                                    probability distribution of the true state of a system. This procedure was applied to
+                                                    updating travel time estimation in a road network. The procedure can be found in Chapter 6
+                                                    of my PhD thesis (link <a href="http://hdl.handle.net/10012/13325"
+                                                        target="_blank"><b>here</b></a>).
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="accordion-item">
+                                            <h2 class="accordion-header" id="subFour-heading4">
+                                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                                    data-bs-target="#subFour-collapse4" aria-expanded="false" aria-controls="subFour-collapse4">
+                                                    Discrete-Event Simulation of a Production Process
+                                                </button>
+                                            </h2>
+                                            <div id="subFour-collapse4" class="accordion-collapse collapse" aria-labelledby="subFour-heading4"
+                                                data-bs-parent="#subAccordionFour">
+                                                <div class="accordion-body">
+                                                    As part of my MSc. thesis, I formulated a discrete-event simulation model of a real
+                                                    production process. Model details are found here:
+                                                    <a href="http://132.248.9.195/ptd2013/febrero/0689556/Index.html"
+                                                        target="_blank"><b>here</b></a>.
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
     </section>
-    <!-- Image element - style="background-image: url('https://source.unsplash.com/co0HNkVQmzE/1200x800')-->
-    <div class="py-5 bg-image-full" style="background-image: url('img/stars.jpg')">
-        <!-- Put anything you want here! The spacer below with inline CSS is just for demo purposes!-->
-        <div style="height: 5rem"></div>
-    </div>
-    <!-- Content section-->
-    <section class="py-5">
-        <div class="container my-5" id="OPT">
-            <div class="row justify-content-center">
-                <div class="col-lg-8" style="text-align:justify">
-                    <h2>OPTIMIZATION MODELS & ALGORITHMS</h2>
-                    <br>
-                    <ul>
-                        <li><b>Spatial Mixed-Integer Linear Program for Nutrient Measure Selection</b><br>
-                            Formulated and implemented a mixed-integer linear program that determines the least-cost way
-                            to achieve an environmental nutrient target by selecting optimal abatement measures for
-                            different sub-watersheds. The paper is <a href="https://doi.org/10.1111/cjag.12342"
-                                target="_blank"><b>here</b></a>.
-                        </li>
-                        <br>
-                        <li><b>Multi-Objective Optimization for Water Resources Management</b><br>
-                            Formulated and implemented a goal programming model that allocates water volumes from
-                            various water supply sources (groundwater, surface water, desalinated water, treated
-                            wastewater) to different water uses (domestic, agricultural, industrial), taking into
-                            account stakeholders' prioritization. The publication is found <a
-                                href="https://doi.org/10.3390/ECWS-7-14227" target="_blank"><b>here</b></a> and the
-                            model <a href="https://github.com/jorge-antares/water_allocation_model"
-                                target="_blank"><b>here</b></a>.
-                        </li>
-                        <br>
-                        <li><b>Quadratic Programming for Optimal Investment in Abatement</b><br>
-                            Formulated a quadratic program that builds up from a hydrological steady-state model of the
-                            Lake Erie watershed and determines the level of investment in wastewater treaatment plants
-                            or agricultural areas such that a target phosphorus reduction is achieved. Preprint found <a
-                                href="files/cea2024.pdf"><b>here</b></a>.
-                        </li>
-                        <br>
-                        <li><b>Integer Programming for Production Planning</b><br>
-                            Formulated and implemented an integer program for production planning on a
-                            manufacturing company. This model was developed as part of my MSc. thesis which and can be
-                            found <a href="http://132.248.9.195/ptd2013/febrero/0689556/Index.html"><b>here</b></a>.
-                        </li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-    </section>
-    <!-- Image element - style="background-image: url('https://source.unsplash.com/27heHQl2JtY/1200x800')-->
-    <div class="py-5 bg-image-full" style="background-image: url('img/glb.jpg')">
-        <!-- Put anything you want here! The spacer below with inline CSS is just for demo purposes!-->
-        <div style="height: 5rem"></div>
-    </div>
-    <!-- Content section-->
-    <section class="py-5">
-        <div class="container my-5" id="ML">
-            <div class="row justify-content-center">
-                <div class="col-lg-8" style="text-align:justify">
-                    <h2>MACHINE LEARNING & DATA SCIENCE</h2>
-                    <br>
-                    <ul>
-                        <li><b>Machine Learning Applied to Discrete Choice Surveys</b><br>
-                            Applied machine learning to predict the willingness-to-pay of respondents about beach
-                            clean-up measures from a survey applied to several European countries. Results are
-                            comparable to those from traditional discrete choice models.
-                        </li>
-                        <br>
-                        <li><b>Land Use Clustering</b><br>
-                            Grouped census sub-divisions in Ontario based on their land use shares and socio-economic
-                            variables using K-means clustering. This grouping will be used in a model to predict future
-                            land use changes.
-                        </li>
-                        <br>
-                        <li><b>Integrated Choice and Latent Variable</b><br>
-                            Specified and solved an integrated choice and latent variable model about
-                            attribute-non-attendance on responders of a survey. The novelty of this approach is that I
-                            used PCA and ICA to select the socio-econ variables from which latent variables are created.
-                        </li>
-                        <br>
-                        <li><b>Canadian Census Data Processing</b><br>
-                            Developed a procedure to extract census data for multiple years and load them into SQLite
-                            databases for posterior use in modeling and analyses. Code will be soon made available on
-                            GitHub.
-                        </li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-    </section>
-    <!-- Image element - style="background-image: url('https://source.unsplash.com/fUnfEz3VLv4/1200x800')-->
-    <div class="py-5 bg-image-full" style="background-image: url('img/river.jpg')">
-        <!-- Put anything you want here! The spacer below with inline CSS is just for demo purposes!-->
-        <div style="height: 5rem"></div>
-    </div>
-    <!-- Content section-->
-    <section class="py-5">
-        <div class="container my-5" id="ECON">
-            <div class="row justify-content-center">
-                <div class="col-lg-8" style="text-align:justify">
-                    <h2>MACROECONOMIC MODELING</h2>
-                    <br>
-                    <ul>
-                        <li><b>Computable General Equilibrium</b><br>
-                            Developed a CGE model for the Canadian economy to evaluate the impact of future
-                            climate-induced water shocks. The model has 49 industries, 64 commodities, and 4 economic
-                            agents. It was constructed in Python but the core solver is from GAMS. The preprint is
-                            <a href="https://arxiv.org/abs/2309.16678" target="_blank"><b>here</b></a> and the model
-                            details <a href="files/cge_w.pdf" target="_blank"><b>here</b></a>.
-                        </li>
-                        <br>
-                        <li><b>Canadian Social Accounting Matrix</b><br>
-                            Developed a procedure to automatize the creation of Social Accounting Matrices for the
-                            Canadian economy using tables from Statistics Canada. Tables are found <a
-                                href="https://github.com/jorge-antares/SAMCanada.git" target="_blank"><b>here</b></a>.
-                        </li>
-                        <br>
-                        <li><b>Multi-Regional Input Output models</b><br>
-                            Developed a hydro-economic model combining the Input Output theory and linear programming.
-                            This model was used to evaluate the cost of water disruptions or emission constraints into
-                            the Great Lakes economy. Publications are here: <a
-                                href="https://doi.org/10.1029/2021WR030772" target="_blank"><b>WRR</b></a> and <a
-                                href="https://doi.org/10.1080/09535314.2020.1805414" target="_blank"><b>ESR</b></a>.
-                        </li>
-                        <br>
-                        <li><b>Discrete Choice Models</b><br>
-                            Formulated and estimated discrete choice models related to environmental or water quality
-                            surveys. For example, I participated in the specification of a model to describe
-                            respondents' preferences and willingness-to-pay about beach litter cleaning measures.
-                        </li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-    </section>
-    <!-- Image element - style="background-image: url('https://source.unsplash.com/fUnfEz3VLv4/1200x800')-->
-    <div class="py-5 bg-image-full" style="background-image: url('img/ocean.jpg')">
-        <!-- Put anything you want here! The spacer below with inline CSS is just for demo purposes!-->
-        <div style="height: 5rem"></div>
-    </div>
-    <!-- Content section-->
-    <section class="py-5">
-        <div class="container my-5" id="SIM">
-            <div class="row justify-content-center">
-                <div class="col-lg-8" style="text-align:justify">
-                    <h2>SYSTEMS ENGINEERING</h2>
-                    <br>
-                    <ul>
-                        <li><b>Reaction-Diffusion Equation for Containers' Lifetime Calculation</b><br>
-                            Numerically solved a reaction-diffusion system to approximate the reduction of sulphate to
-                            sulphide caused by sulphate-reducing bacteria under the conditions of a deep geological
-                            repository in order to calculate the corrosion rate and therefore the expected lifetime of
-                            used nuclear fuel containers. The
-                            publication is found
-                            <a href="https://doi.org/10.3390/app11177806" target="_blank"><b>here</b></a>.
-                        </li>
-                        <br>
-                        <li><b>Agent-Based Model of Drivers in a Road Network</b><br>
-                            Formulated an agent-based model to describe the effect on road networks of drivers using
-                            real-time information about current travelling times to choose their destination route.
-                            The model is presented
-                            <a href="http://hdl.handle.net/10012/13325" target="_blank"><b>here</b></a>.
-                        </li>
-                        <br>
-                        <li><b>Bayesian Belief Updating Procedure</b><br>
-                            Developed a procedure to assimilate new information and update current beliefs about the
-                            probability distribution of the true state of a system. This procedure was applied to
-                            updating travel time estimation in a road network. The procedure can be found in Chapter 6
-                            of my PhD thesis (link <a href="http://hdl.handle.net/10012/13325"
-                                target="_blank"><b>here</b></a>).
-                        </li>
-                        <br>
-                        <li><b>Discrete-Event Simulation of a Production Process</b><br>
-                            As part of my MSc. thesis, I formulated a discrete-event simulation model of a real
-                            production process. Model details are found here:
-                            <a href="http://132.248.9.195/ptd2013/febrero/0689556/Index.html"
-                                target="_blank"><b>here</b></a>.
-                        </li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-    </section>
+    
     <!-- Image element - style="background-image: url('https://source.unsplash.com/co0HNkVQmzE/1200x800')-->
     <div class="py-5 bg-image-full" style="background-image: url('img/acropolis.jpg')">
         <!-- Put anything you want here! The spacer below with inline CSS is just for demo purposes!-->
@@ -278,7 +434,7 @@
     <section class="py-5">
         <div class="container my-5" id="CONTACT">
             <div class="row justify-content-center">
-                <div class="col-lg-6">
+                <div class="col-lg-8">
                     <h2>CONTACT</h2>
                     <p>
                         ja4garci@uwaterloo.ca<br>
@@ -290,7 +446,7 @@
                     <p id="positionUser"></p>
                     <br><br>
                 </div>
-                <div id="map" style="width:90%"></div>
+                <div id="map" style="width:80%"></div>
 
             </div>
         </div>
@@ -303,7 +459,7 @@
         </div>
     </footer>
     <!-- Bootstrap core JS-->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="js/bootstrap.bundle.min.js"></script>
     <!-- Core theme JS-->
     <script src="js/scripts.js"></script>
 </body>
