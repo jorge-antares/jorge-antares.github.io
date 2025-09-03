@@ -63,13 +63,34 @@ body {
     pointer-events: auto;
 }
 
+.autocom-box {
+    max-height: 250px;
+    overflow-y: auto;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+    border-radius: 0 0 0.5rem 0.5rem;
+    display: none;
+}
+
+.autocom-box.show {
+    display: block;
+}
+
 .autocom-box li {
     list-style: none;
-    padding: 8px 12px;
-    display: none;
-    width: 50%;
-    cursor: default;
-    border-radius: 3px;
+    padding: 8px 16px;
+    background: #fff;
+    border-bottom: 1px solid #e9ecef;
+    transition: background 0.2s;
+}
+
+.autocom-box li:last-child {
+    border-bottom: none;
+}
+
+.autocom-box li:hover, .autocom-box li.active {
+    background: #e3f2fd;
+    color: #1565c0;
+    cursor: pointer;
 }
 
 .search-input.active .autocom-box li {
@@ -97,4 +118,14 @@ body {
     position: static;
     height: 90%;
     width: 90%;
+    background: #fff;
+    border-radius: 1rem;
+    padding: 2rem 1rem;
+    box-shadow: 0 2px 16px rgba(0,0,0,0.05);
+}
+
+@media (max-width: 576px) {
+    .chart-container {
+        padding: 1rem 0.2rem;
+    }
 }

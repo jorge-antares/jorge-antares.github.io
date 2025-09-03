@@ -1,11 +1,12 @@
 //  names.js
 //  sep 2024    Jorge A. Garcia
 
-const searchWrapper = document.querySelector(".search-input");
-const genselect = searchWrapper.querySelector('select');
-const inputBox = searchWrapper.querySelector("input");
-const suggBox = searchWrapper.querySelector(".autocom-box");
-var myChart;
+const genselect = document.getElementById('gendersel');
+const inputBox = document.getElementById('nameInput');
+const suggBox = document.querySelector('.autocom-box');
+let myChart;
+
+let maledata, femaledata, maleunique, femaleunique, ismale = true;
 
 main();
 
@@ -16,63 +17,55 @@ async function main() {
     maleunique = await getData("data/maleunique.json");
     femaleunique = await getData("data/femaleunique.json");
     ismale = true;
-    //const maledata = await getData("data/male.json");
-    //const femaledata = await getData("data/female.json");
-    //const maleunique = getUnique(maledata);
-    //const femaleunique = getUnique(femaledata);
-    //var ismale = true;
 
     // 2. IS MALE?
-    genselect.onchange = async (elem) => {
+    genselect.onchange = (elem) => {
         ismale = elem.target.value == 'male';
         inputBox.value = "";
         inputBox.setAttribute("placeholder", "Type name...");
-        console.log("Is male: " + ismale);
+        suggBox.classList.remove("show");
     }
 
     // 3. SEARCH BAR
-    inputBox.onkeyup = async (elem) => {
+    inputBox.onkeyup = (elem) => {
         const value = elem.target.value;
-        const names_shown = [];
-        var names_filtered = [];
+        let names_filtered = [];
 
         if (value) {
             // FILTER
             if (ismale) {
                 names_filtered = maleunique.filter((entry) => {
                     return entry.toLowerCase().startsWith(value.toLowerCase());
-                })
+                });
             } else {
                 names_filtered = femaleunique.filter((entry) => {
                     return entry.toLowerCase().startsWith(value.toLowerCase());
-                })
+                });
             }
             names_filtered.sort();
 
             // ADD LIST
-            names_filtered.forEach((name) => {
-                names_shown.push(`<li>${name}</li>`);
-            });
-
-            // ACTIVE SEARCH
-            searchWrapper.classList.add("active");
-
-            // Show autocomplete box
+            let names_shown = names_filtered.map(name => `<li class="list-group-item list-group-item-action">${name}</li>`);
             showSuggestions(names_shown);
 
-            let allList = suggBox.querySelectorAll("li");
+            suggBox.classList.add("show");
 
-            for (let i = 0; i < allList.length; i++) {
-                // Adding onclick attribute in all li tag
-                if (allList[i].textContent != 'No results :(') {
-                    allList[i].setAttribute("onclick", "select(this)");
-                }
-            }
+            let allList = suggBox.querySelectorAll("li");
+            allList.forEach(li => {
+                li.onclick = () => select(li);
+            });
 
         } else {
-            searchWrapper.classList.remove("active");
+            suggBox.classList.remove("show");
         }
     };
+
+    // Hide suggestions when clicking outside
+    document.addEventListener('click', function (event) {
+        if (!inputBox.contains(event.target) && !suggBox.contains(event.target)) {
+            suggBox.classList.remove("show");
+        }
+    });
 }
 
 async function getData(filepath) {
@@ -81,11 +74,8 @@ async function getData(filepath) {
     return data.records;
 };
 
-
 function createPlot(name) {
-    var data;
-    var bordercolor;
-    var backcolor;
+    let data, bordercolor, backcolor;
 
     // GET DATA
     if (ismale) {
@@ -98,9 +88,9 @@ function createPlot(name) {
         backcolor = '#FFB1C1';
     }
 
-    var minyear = parseInt(data[0][1]);
-    var maxyear = parseInt(data[data.length - 1][1]);
-    var namecounts = {};
+    let minyear = parseInt(data[0][1]);
+    let maxyear = parseInt(data[data.length - 1][1]);
+    let namecounts = {};
     for (let i = minyear; i <= maxyear; i++) {
         namecounts[i] = '0';
     }
@@ -110,19 +100,18 @@ function createPlot(name) {
         namecounts[domain] = count;
     }
 
-    console.log(minyear);
-    console.log(maxyear);
-    console.log(namecounts);
+    if (myChart) {
+        myChart.destroy();
+    }
 
-    // PLOT
     const ctx = document.getElementById('myChart');
     myChart = new Chart(ctx, {
         type: 'bar',
         data: {
-            labels: Object.keys(namecounts),//data.map((elem) => elem[1]),
+            labels: Object.keys(namecounts),
             datasets: [{
                 label: '# Baby Names',
-                data: Object.values(namecounts),//data.map((elem) => elem[3]),
+                data: Object.values(namecounts),
                 borderWidth: 1,
                 borderColor: bordercolor,
                 backgroundColor: backcolor
@@ -138,36 +127,21 @@ function createPlot(name) {
     });
 }
 
-function getUnique(myarray) {
-    const mynewarray = myarray.map((entry) => entry[2].trim())
-    return mynewarray.filter(onlyUnique);
-}
-function onlyUnique(value, index, array) {
-    return array.indexOf(value) === index;
-}
-
-// SHOW SUGGESTIONS
 function showSuggestions(list) {
     let listData;
     if (!list.length) {
-        // if empty
-        listData = `<li>No results :(</li>`;
+        listData = `<li class="list-group-item">No results :(</li>`;
     } else {
-        // join array elements
         listData = list.join('');
     }
     suggBox.innerHTML = listData;
-};
+}
 
-// SELECT ELEMENT
 function select(element) {
     const nameSelected = element.textContent;
     if (nameSelected) {
-        if (myChart) {
-            myChart.destroy();
-        }
         inputBox.value = nameSelected;
-        searchWrapper.classList.remove("active");
+        suggBox.classList.remove("show");
         createPlot(nameSelected);
     }
 };
