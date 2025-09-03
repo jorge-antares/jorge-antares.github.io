@@ -1,5 +1,3 @@
-
-
 var map = L.map('map').setView([43.4643, -80.5204], 13);
 L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
     attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>',
@@ -20,9 +18,17 @@ function getLocation() {
 
 
 function showPosition(position) {
-  x.innerHTML = "Latitude: " + position.coords.latitude + "<br>Longitude: " + position.coords.longitude;
-    map.setView({lat: position.coords.latitude, lng: position.coords.longitude}, 15);
-    var marker = L.marker([position.coords.latitude, position.coords.longitude]).addTo(map);
+  x.innerHTML = "Latitude: " + position.coords.latitude + "<br>Longitude: " + position.coords.longitude +
+    "<br>Accuracy: " + position.coords.accuracy + " meters";
+  map.setView({lat: position.coords.latitude, lng: position.coords.longitude}, 16);
+  var marker = L.marker([position.coords.latitude, position.coords.longitude]).addTo(map);
+  // Draw a circle with radius equal to the accuracy
+  var circle = L.circle([position.coords.latitude, position.coords.longitude], {
+    radius: position.coords.accuracy,
+    color: '#1976d2',
+    fillColor: '#1976d2',
+    fillOpacity: 0.2
+  }).addTo(map);
 }
 
 function showError(error) {
