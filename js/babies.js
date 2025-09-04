@@ -2,12 +2,11 @@
 let isDarkMode = false;
 
 // USER INPUT DIV
-const searchWrapper = document.querySelector(".user-input");
-const genselect = searchWrapper.querySelector('select');
-const inputMonths = searchWrapper.querySelector("#months");
-const inputHeight = searchWrapper.querySelector("#height");
-const inputWeight = searchWrapper.querySelector("#weight");
-const calcButton = searchWrapper.querySelector("button");
+const genselect = document.getElementById('gendersel');
+const inputMonths = document.getElementById('months');
+const inputHeight = document.getElementById('height');
+const inputWeight = document.getElementById('weight');
+const calcButton = document.getElementById('generate-charts-btn');
 
 // INITIALIZATION
 let ismale = true;
@@ -252,11 +251,11 @@ async function makeCharts() {
                     }
                 },
                 plugins: {
-                    title: {
-                        display: true,
-                        text: 'Height in cm',
-                        font: { size: 15 }
-                    }
+                    //title: {
+                    //    display: true,
+                    //    text: 'Height in cm',
+                    //    font: { size: 15 }
+                    //}
                 },
                 maintainAspectRatio: false
             }
@@ -445,13 +444,13 @@ async function makeCharts() {
                         }
                     }
                 },
-                plugins: {
-                    title: {
-                        display: true,
-                        text: 'Weight in kg',
-                        font: { size: 15 }
-                    }
-                },
+                //plugins: {
+                //    title: {
+                //        display: true,
+                //        text: 'Weight in kg',
+                //        font: { size: 15 }
+                //    }
+                //},
                 maintainAspectRatio: false
             }
         });

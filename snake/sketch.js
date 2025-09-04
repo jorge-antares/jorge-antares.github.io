@@ -4,7 +4,7 @@ var biteLoc = [];
 var alive = true;
 
 function setup() {
-  createCanvas(700, 700);
+  createCanvas(600, 600);
   background(255);
   s = new Snake();
   createBite(ds, s);
